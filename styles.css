@@ -1,0 +1,62 @@
+ /* navegación css */
+nav {
+    background-color: #00003a;
+    padding: 10px;
+}
+  
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+}
+  
+      
+  
+/* contenido principal css */
+.contenido {
+    padding: 20px;
+}
+  
+h1 {
+    color: #0a0073;
+}
+  
+/* grilla css */
+.grilla {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+  
+.tarjeta {
+    background-color: #b8becf;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+}
+  
+.tarjeta h3 {
+    margin-top: 0;
+
+}
+  
+/* RESPONSIVE*/
+@media (max-width: 600px) {
+    .grilla {
+        grid-template-columns: 1fr;
+    }
+}
+  
+/* pie de pagina css */
+footer {
+    background-color: #100d33;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+  
+footer a {
+    color: white;
+}
