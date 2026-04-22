@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Página</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+
+
+<body>
+
+  
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#">Proyectos</a>
+    <a href="#">Contacto</a>
+  </nav>
+
+  <header>
+    <div id="miCarousel" class="carousel slide" data-bs-ride="carousel">
+
+      <!-- Indicadores (los puntitos de abajo) -->
+      <div class="carousel-indicators">
+        <button data-bs-target="#miCarousel" data-bs-slide-to="0" class="active"></button>
+        <button data-bs-target="#miCarousel" data-bs-slide-to="1"></button>
+        <button data-bs-target="#miCarousel" data-bs-slide-to="2"></button>
+      </div>
+    
+      <!-- Las imágenes -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/imagen1.jpg" class="d-block w-100" alt="Imagen 1">
+        </div>
+        <div class="carousel-item">
+          <img src="img/imagen2.webp" class="d-block w-100" alt="Imagen 2">
+        </div>
+        <div class="carousel-item">
+          <img src="img/imagen3.webp" class="d-block w-100" alt="Imagen 3">
+        </div>
+      </div>
+    
+      <!-- Botones laterales -->
+      <button class="carousel-control-prev" data-bs-target="#miCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" data-bs-target="#miCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    
+    </div>
+  </header>
+
+  
+  <main class="container mt-4">
+    <h1>Universidad Católica de Salta</h1>
+    <h4>Lenguajes III - Ingeniería en Informática</h4>
+    <p>Hecha con HTML y CSS</p>
+
+    <div class="grilla">
+      <div class="tarjeta">
+        <h3>Misión</h3>
+        <p>La Universidad Católica de Salta, a la luz de la fe cristiana y el servicio al ser humano, se dedica a la formación integral, la investigación, la innovación y la producción artística, mediante el conocimiento vivo que humaniza, trasciende, y transforma.</p>
+      </div>
+      <div class="tarjeta">
+        <h3>Visión</h3>
+        <p>Ser una institución de educación superior que por su calidad genera un impacto positivo a nivel global, a través de sus actividades sustantivas, con liderazgo tecnológico e innovador, comprometida con la práctica de los valores del humanismo cristiano y la promoción de la sustentabilidad.</p>
+      </div>
+      <div class="tarjeta">
+        <h3>Valores</h3>
+        <p>Basados en respeto, honestidad, compromiso y fraternidad</p>
+      </div>
+    </div>
+
+  </main>
+
+
+  <!--pie de pagina -->
+  <footer>
+    <p>
+      <a href="https://instagram.com" >
+        <!--icono de instagram vectorial-->
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24" style="vertical-align: middle;">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.975-.975 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.197.157 3.355.673 2.014 2.014.673 3.355.157 5.197.072 7.052.013 8.332 0 8.741 0 12c0 3.259.013 3.668.072 4.948.085 1.855.601 3.697 1.942 5.038 1.341 1.341 3.183 1.857 5.038 1.942C8.332 23.987 8.741 24 12 24s3.668-.013 4.948-.072c1.855-.085 3.697-.601 5.038-1.942 1.341-1.341 1.857-3.183 1.942-5.038.059-1.28.072-1.689.072-4.948s-.013-3.668-.072-4.948c-.085-1.855-.601-3.697-1.942-5.038C20.645.673 18.803.157 16.948.072 15.668.013 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/>
+        </svg>
+        Instagram
+      </a>
+    </p>
+    <p>Joaquín Gómez Burgos - 2026</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
