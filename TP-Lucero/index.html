@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ejercicios JS — Lenguajes III</title>
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <a class="back-link" href="../index.html">← Volver al inicio</a>
+    <h1>Ejercicios de JavaScript</h1>
+    <p>Lenguajes III — 2026 &nbsp;·&nbsp; Resoluciones interactivas</p>
+  </div>
+
+  <!-- ── SECCIÓN ARRAYS ── -->
+  <div class="section-title">Manejo de arrays</div>
+
+  <div class="card">
+    <div class="card-header" onclick="toggle(this)">
+      <div class="card-left"><span class="card-num">01</span><span class="card-title">Ejercicio 1 — Filtrar números pares</span></div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="card-body">
+      <p class="demo-label">Ingresá números separados por coma</p>
+      <input class="gh-input" id="e1-input" placeholder="Ej: 1, 2, 3, 4, 5, 6">
+      <button class="gh-btn" onclick="ejercicio1()">Filtrar pares</button>
+      <div class="result" id="e1-res"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" onclick="toggle(this)">
+      <div class="card-left"><span class="card-num">02</span><span class="card-title">Ejercicio 2 — Eliminar duplicados</span></div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="card-body">
+      <p class="demo-label">Ingresá valores separados por coma</p>
+      <input class="gh-input" id="e2-input" placeholder="Ej: manzana, pera, manzana, uva, pera">
+      <button class="gh-btn" onclick="ejercicio2()">Eliminar duplicados</button>
+      <div class="result" id="e2-res"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" onclick="toggle(this)">
+      <div class="card-left"><span class="card-num">03</span><span class="card-title">Ejercicio 3 — Ordenar nombres alfabéticamente</span></div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="card-body">
+      <p class="demo-label">Ingresá nombres separados por coma</p>
+      <input class="gh-input" id="e3-input" placeholder="Ej: Carlos, Ana, Beatriz, Diego">
+      <button class="gh-btn" onclick="ejercicio3()">Ordenar A-Z</button>
+      <div class="result" id="e3-res"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" onclick="toggle(this)">
+      <div class="card-left"><span class="card-num">04</span><span class="card-title">Ejercicio 4 — Sumar elementos de un array</span></div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="card-body">
+      <p class="demo-label">Ingresá números separados por coma</p>
+      <input class="gh-input" id="e4-input" placeholder="Ej: 10, 20, 30, 5">
+      <button class="gh-btn" onclick="ejercicio4()">Calcular suma</button>
+      <div class="result" id="e4-res"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" onclick="toggle(this)">
+      <div class="card-left"><span class="card-num">05</span><span class="card-title">Ejercicio 5 — Buscar elemento en un array</span></div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="card-body">
+      <p class="demo-label">Array de nombres y nombre a buscar</p>
+      <div class="row">
+        <div class="col"><input class="gh-input" id="e5-array" placeholder="Ej: Ana, Luis, Pedro, María"></div>
+        <div class="col"><input class="gh-input" id="e5-buscar" placeholder="Nombre a buscar..."></div>
+      </div>
+      <button class="gh-btn" onclick="ejercicio5()">Buscar</button>
+      <div class="result" id="e5-res"></div>
+    </div>
+  </div>
+
+  <!-- ── SECCIÓN DOM ── -->
+  <div class="section-title">Manejo del DOM</div>
+
+  <!-- Ejercicio 6: bloque fijo -->
+  <div class="dom-header">
+    <div class="dom-header-title">
+      <span class="card-num">06</span>
+      <span class="card-title">Ejercicio 6 — Creación de array dinámico</span>
+    </div>
+    <p class="demo-label">Ingresá un nombre y agregalo al array</p>
+    <div class="row">
+      <div class="col">
+        <input class="gh-input" id="e6-input" placeholder="Ej: hola"
+          onkeydown="if(event.key==='Enter') ejercicio6Agregar()">
+      </div>
+      <button class="gh-btn" style="margin-top:0;" onclick="ejercicio6Agregar()">Agregar</button>
+      <button class="gh-btn gh-btn-danger" style="margin-top:0;" onclick="ejercicio6Limpiar()">Limpiar</button>
+    </div>
+    <div class="array-display">
+      <p class="array-label">Array compartido — <span id="array-count">0</span> elemento(s)</p>
+      <div class="array-pills" id="array-pills">
+        <span class="empty-msg">El array está vacío. Agregá nombres arriba.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ejercicio 7 -->
+  <div class="card">
+    <div class="card-header" onclick="toggle(this)">
+      <div class="card-left"><span class="card-num">07</span><span class="card-title">Ejercicio 7 — Modificar elemento por índice</span></div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="card-body">
+      <div class="info-banner">Opera sobre el array del ejercicio 6.</div>
+      <p class="demo-label">Índice a modificar y nuevo valor</p>
+      <div class="row">
+        <div class="col"><input class="gh-input" id="e7-idx" type="number" min="0" placeholder="Índice (ej: 0)"></div>
+        <div class="col"><input class="gh-input" id="e7-valor" placeholder="Nuevo valor"></div>
+      </div>
+      <button class="gh-btn" onclick="ejercicio7()">Modificar</button>
+      <div class="result" id="e7-res"></div>
+    </div>
+  </div>
+
+  <!-- Ejercicio 8 -->
+  <div class="card">
+    <div class="card-header" onclick="toggle(this)">
+      <div class="card-left"><span class="card-num">08</span><span class="card-title">Ejercicio 8 — Agregar y quitar clases</span></div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="card-body">
+      <div class="info-banner">Muestra los nombres del array del ejercicio 6. Hacé clic en cada uno para togglear la clase "activo".</div>
+      <button class="gh-btn gh-btn-secondary" onclick="ejercicio8Render()">Renderizar nombres</button>
+      <div id="e8-lista" style="margin-top:10px;"></div>
+      <div class="result" id="e8-res"></div>
+    </div>
+  </div>
+
+  <!-- Ejercicio 9 -->
+  <div class="card">
+    <div class="card-header" onclick="toggle(this)">
+      <div class="card-left"><span class="card-num">09</span><span class="card-title">Ejercicio 9 — Formulario dinámico</span></div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="card-body">
+      <div class="info-banner">Captura el valor del input y lo guarda en el array del ejercicio 6.</div>
+      <p class="demo-label">Ingresá un valor para agregar al array compartido</p>
+      <div class="row">
+        <div class="col"><input class="gh-input" id="e9-input" placeholder="Ingresá un nombre"></div>
+        <button class="gh-btn" style="margin-top:0;" onclick="ejercicio9Agregar()">Guardar en array</button>
+      </div>
+      <div class="result" id="e9-res"></div>
+    </div>
+  </div>
+
+  <!-- Ejercicio 10 -->
+  <div class="card">
+    <div class="card-header" onclick="toggle(this)">
+      <div class="card-left"><span class="card-num">10</span><span class="card-title">Ejercicio 10 — Generar tarjetas desde el array</span></div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="card-body">
+      <div class="info-banner">Genera una tarjeta por cada nombre en el array del ejercicio 6.</div>
+      <button class="gh-btn" onclick="ejercicio10()">Generar tarjetas</button>
+      <div id="e10-res" style="margin-top:10px;"></div>
+    </div>
+  </div>
+
+  <p class="footer">github.com/joaquin &nbsp;·&nbsp; Facultad de Ingeniería — UCASAL</p>
+
+</div>
+
+<script>
+  // Array compartido entre todos los ejercicios DOM
+  const arrayDOM = [];
+
+  function actualizarVisualizacion() {
+    const pills = document.getElementById('array-pills');
+    document.getElementById('array-count').textContent = arrayDOM.length;
+    if (arrayDOM.length === 0) {
+      pills.innerHTML = '<span class="empty-msg">El array está vacío. Agregá nombres arriba.</span>';
+      return;
+    }
+    pills.innerHTML = arrayDOM.map((val, i) =>
+      '<span class="pill"><span class="pill-idx">' + i + '</span>' + val + '</span>'
+    ).join('');
+  }
+
+  function toggle(header) {
+    header.nextElementSibling.classList.toggle('open');
+    header.querySelector('.chevron').classList.toggle('open');
+  }
+
+  // Ejercicio 1 — Filtrar pares
+  function filtrarPares(arr) { return arr.filter(n => n % 2 === 0); }
+  function ejercicio1() {
+    const nums = document.getElementById('e1-input').value
+      .split(',').map(n => parseInt(n.trim())).filter(n => !isNaN(n));
+    const pares = filtrarPares(nums);
+    document.getElementById('e1-res').textContent =
+      pares.length ? pares.join(', ') : 'No hay números pares';
+  }
+
+  // Ejercicio 2 — Eliminar duplicados
+  function eliminarDuplicados(arr) { return [...new Set(arr)]; }
+  function ejercicio2() {
+    const vals = document.getElementById('e2-input').value
+      .split(',').map(v => v.trim()).filter(v => v);
+    document.getElementById('e2-res').textContent = eliminarDuplicados(vals).join(', ');
+  }
+
+  // Ejercicio 3 — Ordenar
+  function ordenarNombres(arr) { return arr.sort((a, b) => a.localeCompare(b, 'es')); }
+  function ejercicio3() {
+    const nombres = document.getElementById('e3-input').value
+      .split(',').map(n => n.trim()).filter(n => n);
+    document.getElementById('e3-res').textContent = ordenarNombres([...nombres]).join(', ');
+  }
+
+  // Ejercicio 4 — Suma
+  function sumarArray(arr) { return arr.reduce((acc, n) => acc + n, 0); }
+  function ejercicio4() {
+    const nums = document.getElementById('e4-input').value
+      .split(',').map(n => parseFloat(n.trim())).filter(n => !isNaN(n));
+    document.getElementById('e4-res').textContent = 'Suma total: ' + sumarArray(nums);
+  }
+
+  // Ejercicio 5 — Buscar
+  function buscarEnArray(arr, nombre) {
+    return arr.findIndex(n => n.toLowerCase() === nombre.toLowerCase());
+  }
+  function ejercicio5() {
+    const arr = document.getElementById('e5-array').value.split(',').map(n => n.trim());
+    const buscar = document.getElementById('e5-buscar').value.trim();
+    const idx = buscarEnArray(arr, buscar);
+    document.getElementById('e5-res').textContent =
+      idx !== -1 ? '✓ Encontrado en índice ' + idx : '✗ No encontrado (retorna -1)';
+  }
+
+  // Ejercicio 6 — Array dinámico
+  function ejercicio6Agregar() {
+    const input = document.getElementById('e6-input');
+    const val = input.value.trim();
+    if (!val) return;
+    arrayDOM.push(val);
+    input.value = '';
+    input.focus();
+    actualizarVisualizacion();
+  }
+  function ejercicio6Limpiar() {
+    arrayDOM.length = 0;
+    actualizarVisualizacion();
+    document.getElementById('e8-lista').innerHTML = '';
+    document.getElementById('e8-res').textContent = '';
+    document.getElementById('e10-res').innerHTML = '';
+  }
+
+  // Ejercicio 7 — Modificar por índice
+  function modificarPorIndice(arr, idx, valor) {
+    if (idx < 0 || idx >= arr.length) return false;
+    arr[idx] = valor;
+    return true;
+  }
+  function ejercicio7() {
+    const idx = parseInt(document.getElementById('e7-idx').value);
+    const valor = document.getElementById('e7-valor').value.trim();
+    const res = document.getElementById('e7-res');
+    if (!valor) { res.textContent = 'Ingresá un valor.'; return; }
+    if (arrayDOM.length === 0) { res.textContent = 'El array está vacío. Agregá nombres en el ejercicio 6.'; return; }
+    const ok = modificarPorIndice(arrayDOM, idx, valor);
+    if (ok) {
+      actualizarVisualizacion();
+      res.textContent = 'Índice ' + idx + ' modificado a "' + valor + '"';
+    } else {
+      res.textContent = 'Índice ' + idx + ' fuera de rango. El array tiene ' + arrayDOM.length + ' elemento(s).';
+    }
+  }
+
+  // Ejercicio 8 — Toggle clase
+  function ejercicio8Render() {
+    const lista = document.getElementById('e8-lista');
+    const res = document.getElementById('e8-res');
+    if (arrayDOM.length === 0) {
+      lista.innerHTML = '';
+      res.textContent = 'El array está vacío. Agregá nombres en el ejercicio 6.';
+      return;
+    }
+    lista.innerHTML = arrayDOM.map((nombre, i) =>
+      '<div class="toggle-box" id="toggle-' + i + '" onclick="toggleNombre(' + i + ')">' + nombre + '</div>'
+    ).join('');
+    res.textContent = '';
+  }
+  function toggleNombre(i) {
+    const el = document.getElementById('toggle-' + i);
+    el.classList.toggle('activo');
+    document.getElementById('e8-res').textContent =
+      '"' + arrayDOM[i] + '" (índice ' + i + ') → ' +
+      (el.classList.contains('activo') ? 'clase agregada' : 'clase removida');
+  }
+
+  // Ejercicio 9 — Formulario dinámico
+  function ejercicio9Agregar() {
+    const val = document.getElementById('e9-input').value.trim();
+    const res = document.getElementById('e9-res');
+    if (!val) { res.textContent = 'Ingresá un valor.'; return; }
+    arrayDOM.push(val);
+    document.getElementById('e9-input').value = '';
+    actualizarVisualizacion();
+    res.textContent = '"' + val + '" agregado.\nArray: [' + arrayDOM.map(v => '"' + v + '"').join(', ') + ']';
+  }
+
+  // Ejercicio 10 — Generar tarjetas
+  function generarTarjetas(arr) {
+    const contenedor = document.getElementById('e10-res');
+    contenedor.innerHTML = '';
+    arr.forEach((nombre, i) => {
+      const card = document.createElement('div');
+      card.className = 'user-card';
+      card.innerHTML =
+        '<div class="user-avatar">' + nombre.charAt(0).toUpperCase() + '</div>' +
+        '<div>' +
+          '<p class="user-name">' + nombre + '</p>' +
+          '<p class="user-rol">Índice ' + i + ' — agregado dinámicamente</p>' +
+        '</div>';
+      contenedor.appendChild(card);
+    });
+  }
+  function ejercicio10() {
+    const res = document.getElementById('e10-res');
+    if (arrayDOM.length === 0) {
+      res.innerHTML = '<p style="color:#484f58;font-size:12px;font-style:italic;padding:8px 0;">El array está vacío. Agregá nombres en el ejercicio 6.</p>';
+      return;
+    }
+    generarTarjetas(arrayDOM);
+  }
+</script>
+</body>
+</html>
