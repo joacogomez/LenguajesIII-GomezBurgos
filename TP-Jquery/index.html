@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gestor de Tareas de Proyecto</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/jquery.dataTables.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"></script>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1 id="titulo">Gestor de Tareas de Proyecto</h1>
+
+  <div class="formulario">
+    <label for="nombreTarea">Nombre de la tarea:</label>
+    <input type="text" id="nombreTarea" placeholder="Ingrese una tarea..." />
+
+    <label for="prioridad">Prioridad:</label>
+    <select id="prioridad">
+      <option value="Alta">Alta</option>
+      <option value="Media" selected>Media</option>
+      <option value="Baja">Baja</option>
+    </select>
+
+    <button id="btnAgregar">Agregar</button>
+
+    <p class="error" id="errorMsg">* El campo Nombre de tarea no puede estar vacío.</p>
+  </div>
+
+  <div class="tabla-seccion">
+    <table id="tablaTareas">
+      <thead>
+        <tr>
+          <th>Tarea</th>
+          <th>Prioridad</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
