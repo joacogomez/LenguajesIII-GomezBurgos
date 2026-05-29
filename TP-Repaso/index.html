@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torneo de Videojuegos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Torneo de Videojuegos</h1>
+
+    <!-- Sección 1: Datos del jugador -->
+    <div class="seccion">
+        <h2>Tus datos</h2>
+
+        <div class="campo">
+            <label for="nickname">Nickname</label>
+            <input type="text" id="nickname" placeholder="Ej: Gamer123">
+            <div class="error-msg" id="errorNickname"></div>
+        </div>
+
+        <div class="campo">
+            <label for="edad">Edad</label>
+            <input type="text" id="edad" placeholder="Ej: 20">
+            <div class="error-msg" id="errorEdad"></div>
+        </div>
+
+        <div class="campo">
+            <label for="codigo">Código de equipo</label>
+            <input type="text" id="codigo" placeholder="Ej: 1234" maxlength="4">
+            <div class="error-msg" id="errorCodigo"></div>
+        </div>
+
+        <button type="button" onclick="registrar()">Registrar</button>
+
+        <div id="mensajeRegistro"></div>
+    </div>
+
+    <!-- Sección 2: Selección de juego -->
+    <div class="seccion">
+        <h2>Selección de juego</h2>
+
+        <div class="grilla">
+            <div class="tarjeta" onclick="seleccionarJuego(this, 'Minecraft')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Minecraft-creeper-face.jpg/500px-Minecraft-creeper-face.jpg" alt="Minecraft">
+                <p>Minecraft</p>
+            </div>
+            <div class="tarjeta" onclick="seleccionarJuego(this, 'Fortnite')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Fortnite_F_lettermark_logo.png" alt="Fortnite">
+                <p>Fortnite</p>
+            </div>
+            <div class="tarjeta" onclick="seleccionarJuego(this, 'Valorant')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Valorant_logo_-_pink_color_version.svg/500px-Valorant_logo_-_pink_color_version.svg.png" alt="Valorant">
+                <p>Valorant</p>
+            </div>
+            <div class="tarjeta" onclick="seleccionarJuego(this, 'FIFA 25')">
+                <img src="https://cdn.idealo.com/folder/Product/204587/1/204587170/s11_produktbild_max_1/ea-sports-fc-25-ps4.jpg" alt="FIFA 25">
+                <p>FIFA 25</p>
+            </div>
+            <div class="tarjeta" onclick="seleccionarJuego(this, 'Among Us')">
+                <img src="https://static.wikia.nocookie.net/amongus/images/d/da/Among_Us_Logo.png/revision/latest?cb=20231211001930&path-prefix=es" alt="Among Us">
+                <p>Among Us</p>
+            </div>
+            <div class="tarjeta" onclick="seleccionarJuego(this, 'Rocket League')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Rocket_League_coverart.jpg" alt="Rocket League">
+                <p>Rocket League</p>
+            </div>
+        </div>
+
+        <div class="error-msg" id="errorJuego"></div>
+    </div>
+
+    <!-- Sección 3: Preguntas de preparación -->
+    <div class="seccion" id="seccionPreguntas">
+        <h2>Preguntas de preparación</h2>
+
+        <button type="button" onclick="hacerPreguntas()">Preparación</button>
+
+        <div id="respuestasContainer">
+            <div id="respuestasTexto"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

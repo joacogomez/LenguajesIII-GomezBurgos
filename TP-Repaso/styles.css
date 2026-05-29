@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+.seccion {
+    background: white;
+    padding: 30px;
+    width: 500px;
+    margin: 20px auto;
+    border: 2px solid #ccc;
+}
+
+.campo {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid #ccc;
+}
+
+input.valido {
+    border-color: green;
+}
+
+input.invalido {
+    border-color: red;
+}
+
+.error-msg {
+    color: red;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#mensajeRegistro {
+    margin-top: 15px;
+    padding: 10px;
+    display: none;
+}
+
+#mensajeRegistro.exito {
+    background-color: #d4edda;
+    color: green;
+}
+
+#mensajeRegistro.fracaso {
+    background-color: #f8d7da;
+    color: red;
+}
+
+/* Grilla de juegos */
+.grilla {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.tarjeta {
+    border: 2px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    width: 130px;
+}
+
+.tarjeta img {
+    width: 100px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.tarjeta p {
+    margin-top: 5px;
+}
+
+.tarjeta.seleccionado {
+    border-color: blue;
+    background-color: #e8f0fe;
+}
+
+.error-msg#errorJuego {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Preguntas */
+#seccionPreguntas {
+    display: none;
+}
+
+#respuestasContainer {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #f8f8f8;
+    border: 2px solid #ccc;
+    display: none;
+}
