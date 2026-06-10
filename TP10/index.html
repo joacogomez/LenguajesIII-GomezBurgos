@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Gran Alianza de Aventureros</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="page-wrapper">
+
+    <header class="header">
+      <h1 class="title">La Gran Alianza de Aventureros</h1>
+      <p class="subtitle">Registro de Nuevos Héroes</p>
+    </header>
+
+    <main class="form-container">
+
+      <div class="question" id="q1">
+        <label class="question-label" for="nombre">
+          <span class="q-num">I</span>
+          ¿Cuál es el nombre de tu personaje?
+        </label>
+        <input type="text" id="nombre" class="field" placeholder="Ej: Aragon, Legolas..." autocomplete="off" />
+        <span class="error-msg" id="err1"></span>
+      </div>
+
+      <div class="question hidden" id="q2">
+        <label class="question-label" for="raza">
+          <span class="q-num">II</span>
+          ¿Cuál es tu raza?
+        </label>
+        <select id="raza" class="field">
+          <option value="">— Elige tu raza —</option>
+          <option value="Humano">Humano</option>
+          <option value="Elfo">Elfo</option>
+          <option value="Enano">Enano</option>
+          <option value="Orco">Orco</option>
+        </select>
+        <span class="error-msg" id="err2"></span>
+      </div>
+
+      <div class="question hidden" id="q3">
+        <label class="question-label" for="clase">
+          <span class="q-num">III</span>
+          ¿Cuál es tu clase?
+        </label>
+        <select id="clase" class="field">
+          <option value="">— Elige tu clase —</option>
+          <option value="Guerrero">Guerrero</option>
+          <option value="Mago">Mago</option>
+          <option value="Arquero">Arquero</option>
+          <option value="Sanador">Sanador</option>
+        </select>
+        <span class="error-msg" id="err3"></span>
+      </div>
+
+      <div class="question hidden" id="q4">
+        <label class="question-label" for="reino">
+          <span class="q-num">IV</span>
+          ¿Cuál es el nombre de tu reino de origen?
+        </label>
+        <input type="text" id="reino" class="field" placeholder="Ej: Gondor, Rivendell..." autocomplete="off" />
+        <span class="error-msg" id="err4"></span>
+      </div>
+
+      <div class="question hidden" id="q5">
+        <label class="question-label" for="arma">
+          <span class="q-num">V</span>
+          ¿Cuál es el nombre de tu arma principal?
+        </label>
+        <input type="text" id="arma" class="field" placeholder="Ej: Excalibur, Anduril..." autocomplete="off" />
+        <span class="error-msg" id="err5"></span>
+      </div>
+
+      <div class="question hidden" id="q6">
+        <label class="question-label" for="registro">
+          <span class="q-num">VI</span>
+          ¿Cuál es tu número de registro de aventurero?
+        </label>
+        <input type="text" id="registro" class="field" placeholder="6 dígitos exactos" maxlength="6" autocomplete="off" />
+        <span class="error-msg" id="err6"></span>
+      </div>
+
+      <div class="question hidden" id="q7">
+        <label class="question-label" for="vida">
+          <span class="q-num">VII</span>
+          ¿Cuántos puntos de vida tenés?
+        </label>
+        <input type="text" id="vida" class="field" placeholder="Entre 1 y 999" maxlength="3" autocomplete="off" />
+        <span class="error-msg" id="err7"></span>
+      </div>
+
+      <div class="question hidden" id="q8">
+        <label class="question-label" for="batallas">
+          <span class="q-num">VIII</span>
+          ¿Cuántas batallas ganaste?
+        </label>
+        <input type="text" id="batallas" class="field" placeholder="0 o más" autocomplete="off" />
+        <span class="error-msg" id="err8"></span>
+      </div>
+
+      <div class="question hidden" id="q9">
+        <label class="question-label" for="nacimiento">
+          <span class="q-num">IX</span>
+          ¿Cuándo nació tu personaje?
+        </label>
+        <input type="date" id="nacimiento" class="field" />
+        <span class="error-msg" id="err9"></span>
+      </div>
+
+      <div class="question hidden" id="q10">
+        <label class="question-label" for="aventura">
+          <span class="q-num">X</span>
+          ¿Cuándo comenzaste tu aventura?
+        </label>
+        <input type="date" id="aventura" class="field" />
+        <span class="error-msg" id="err10"></span>
+      </div>
+
+      <div class="success-card hidden" id="success">
+        <p class="success-text" id="success-msg"></p>
+        <div class="success-deco"></div>
+      </div>
+
+      <div class="btn-group" id="btn-group">
+        <button class="btn btn-back" id="btn-back" onclick="retroceder()" disabled>◀ Retroceder</button>
+        <button class="btn btn-reset" id="btn-reset" onclick="reiniciar()">↺ Reiniciar</button>
+        <button class="btn btn-next" id="btn-next" onclick="siguiente()">Siguiente ▶</button>
+      </div>
+
+    </main>
+
+    <footer class="footer">
+      Facultad de Ingeniería — Lenguajes III — 2026
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
